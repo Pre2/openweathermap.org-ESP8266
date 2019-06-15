@@ -195,6 +195,9 @@ void OWMfiveForecast::value(String value) {
   if (currentKey == "humidity") {
     forecasts[index].humidity = value;
   } else
+  if (currentParent == "weather" && currentKey == "main") {
+    forecasts[index].main = value;	// weather/main is now available
+  }
   if (currentParent == "weather" && currentKey == "description") {
     forecasts[index].description = value;
   } else
